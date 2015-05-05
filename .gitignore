@@ -1,0 +1,16 @@
+## General
+.*
+!.gitignore
+
+## Temporary files
+*~
+*.log
+*.bak
+
+## Local configuration
+*.sublime-project
+*.sublime-workspace
+
+## Local dependencies
+/node_modules
+/path-to-your-theme
