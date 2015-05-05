@@ -1,0 +1,7 @@
+{
+	"default": [
+		"pot",
+		"po2mo",
+		"watch"
+	]
+}

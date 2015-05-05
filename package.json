@@ -1,0 +1,17 @@
+{
+  "name": "wp-theme-localization",
+  "version": "1.0.0",
+  "description": "Creates language files based on your WordPress theme",
+  "author": "Niko Pettersen",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/Phoenix2k/wp-theme-localization.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-po2mo": "^0.1.2",
+    "grunt-pot": "^0.2.1",
+    "load-grunt-config": "^0.17.1"
+  }
+}
