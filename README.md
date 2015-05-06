@@ -1,5 +1,5 @@
-WordPress Theme Localization with Grunt
-=======================================
+Localize WP theme files with Grunt
+==================================
 
 Use Grunt to scan your WordPress theme files and keep your language files up to date
 

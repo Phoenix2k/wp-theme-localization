@@ -1,7 +1,7 @@
 {
   "name": "wp-theme-localization",
   "version": "1.0.0",
-  "description": "Creates language files based on your WordPress theme",
+  "description": "Localize WordPress theme files with Grunt",
   "author": "Niko Pettersen",
   "repository": {
     "type": "git",
