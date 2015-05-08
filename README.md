@@ -1,17 +1,19 @@
-Localize WP theme files with Grunt
-==================================
+Localize WordPress themes and plugins with Grunt
+================================================
 
-Use Grunt to scan your WordPress theme files and keep your language files up to date
+Use Grunt to scan your WordPress theme or plugin to generate language files and keep them up to date
 
 ## Getting started
 
 Before proceeding, make sure you are familiar with the [internationalization process (i18n)](https://developer.wordpress.org/themes/functionality/internationalization/) of making your WordPress themes ready for translation.
 
-### Install Gettext
+### Installation
+
+#### Install Gettext
 
 Gettext is required by one of the Grunt tasks to process your language files.
 
-#### Mac OS X
+##### Mac OS X
 
 You can install Gettext via [homebrew](http://brew.sh/):
 
@@ -21,7 +23,7 @@ $ brew install gettext && brew link --force gettext
 
 For more information, visit [http://www.gnu.org/software/gettext/](http://www.gnu.org/software/gettext/)
 
-### Clone the repository
+#### Clone the repository
 
 To create a local copy of the project, go to a preferred location and type:
 
@@ -31,13 +33,13 @@ $ git clone git@github.com:Phoenix2k/wp-theme-localization.git
 
 This will copy all the required files from GitHub to your local machine into a folder called `wp-theme-localization`. If you wish to use a different name, simply add it at the end of the command above.
 
-### Grunt
+### Configuring Grunt
 
 This demo requires Grunt `>=0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide.
 
-This demonstration uses [load-grunt-config](http://firstandthird.github.io/load-grunt-config/) to break up tasks into individual `.js` files which are stored in the `grunt-tasks` folder.
+[load-grunt-config](http://firstandthird.github.io/load-grunt-config/) is used to break up tasks into individual `.js` files. You can find them in the `grunt-tasks` folder.
 
 #### Tasks
 
@@ -47,9 +49,11 @@ This demo consists of three tasks:
 * [grunt-po2mo](https://www.npmjs.com/package/grunt-po2mo) – Compiles .po files into binary .mo files with msgfmt
 * [grunt-contrib-watch](https://www.npmjs.com/package/grunt-contrib-watch) – Watches your theme files and runs one of the tasks above
 
-These Grunt tasks serve as an example on how to scan your WordPress theme files for Gettext strings and update your language files accordingly. Ideally, you will integrate these tasks in your own build process and add the necessary configuration information to your `Gruntifle.js`.
+These Grunt tasks serve as an example on how to scan your WordPress theme files for Gettext strings and update your language files on-the-fly.
 
-To install all the required plugins, go to the project folder and type:
+Ideally, you will integrate these tasks in your own build process and add the configuration information to your `Gruntifle.js`.
+
+To install all the required node modules, go to the project folder and type:
 
 ```sh
 $ npm install
@@ -84,10 +88,15 @@ To start Grunt, open a new terminal window and type the following in the project
 $ grunt
 ```
 
-This will go through all the basic tasks and start the watch service.
+This will go through all the basic tasks and start the watch service:
+* Whenever Grunt detects a change in your theme's PHP files, it will update the language files contained in your languages folder.
+* If it detects changes in your language files, it will recompile them to [Machine Objects](https://developer.wordpress.org/themes/functionality/localization/#mo-machine-object-files) so WordPress can read them.
+* If you delete a string, it will also be removed from your language files. Strings that have already been localized will be commented out and moved to the bottom of the document to serve as translation memory. If you decide to use the string you just deleted after all, the backup will be restored.
 
-Whenever Grunt detects a change in your theme's PHP files, it will update the language files contained in your languages folder. Similarly, if it detects changes in your language files, it will recompile them to [Machine Objects](https://developer.wordpress.org/themes/functionality/localization/#mo-machine-object-files) so WordPress can read them.
+After the `theme-name.pot` file has been generated, you can start creating copies and rename them as `{lang}.po` or `{lang}_{COUNTRY}.po`. Avoid using `.pot` as the extension.
 
-Note: If you delete a string, it will also be removed from your language files. However, if you already had a chance to localize it, it will be commented out and added at the bottom of your `.po` file and restored in case you change your mind later. Feel free to delete them if you really don't need them anymore.
+When creating copies:
+* Check what [locale](http://i18n.svn.wordpress.org/) you should use as the name of your new language file. Some might only contain the language attribute, others language and country.
+* Configure the [header information](https://make.wordpress.org/polyglots/handbook/tools/gettext/#the-po-file-header) of your `.po` files and double check them with an external editor (i.e. [Poedit])(https://poedit.net/)
 
 To terminate the watch service, press `CTRL + C` or close your terminal window.
