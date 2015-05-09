@@ -97,6 +97,6 @@ After the `theme-name.pot` file has been generated, you can start creating copie
 
 When creating copies:
 * Check what [locale](http://i18n.svn.wordpress.org/) you should use as the name of your new language file. Some might only contain the language attribute, others language and country.
-* Configure the [header information](https://make.wordpress.org/polyglots/handbook/tools/gettext/#the-po-file-header) of your `.po` files and double check them with an external editor (i.e. [Poedit])(https://poedit.net/)
+* Configure the [header information](https://make.wordpress.org/polyglots/handbook/tools/gettext/#the-po-file-header) of your `.po` files and double check them with an external editor (i.e. [Poedit](https://poedit.net/))
 
 To terminate the watch service, press `CTRL + C` or close your terminal window.
