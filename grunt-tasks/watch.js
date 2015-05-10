@@ -5,7 +5,7 @@
 
 	module.exports = {
 
-		// Scans PHP files for changes and updates .PO(T) files
+		// Scans PHP files for changes and updates `.po(t)` files
 		php_files: {
 			files: [
 				'<%= config.theme.php_files %>/**/*.php',
@@ -13,7 +13,7 @@
 			tasks: [ 'pot' ]
 		},
 
-		// Converts .PO files to .MO
+		// Converts `.po` files to `.mo`
 		pot_files: {
 			files: [
 				'<%= config.theme.lang_files %>/**/*.pot',
