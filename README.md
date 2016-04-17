@@ -2,7 +2,7 @@ Localize WordPress themes and plugins with Grunt
 ================================================
 Use Grunt to scan your WordPress theme or plugin to generate language files and keep them up to date
 
-[![GitHub license](https://img.shields.io/badge/license-CC0%201.0-orange.svg?style=flat-square)](http://creativecommons.org/publicdomain/zero/1.0/)
+![GitHub license](https://img.shields.io/aur/license/yaourt.svg)
 
 ## Getting started
 
